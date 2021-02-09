@@ -30,7 +30,7 @@ sub startup ($self) {
   $r->any('/')->to('Users#index')->name('index');  #    (컨트롤러 # 메서드)
   $r->get('/hello')->to('example#hello');  #    (컨트롤러 # 메서드)
 
-  my $auth_route = $r->under(
+  my $auth_route = $r->under(   #perl:under메소드가 제일 먼저 실행됨.
      '/',
      sub{
          my $c = shift;
